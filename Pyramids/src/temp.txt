@@ -1,0 +1,30 @@
+public class temp {
+    // all inside main
+    String[][] allData = new String[100][15];
+    int counter = 0;
+    BufferedReader br = new BufferedReader(new FileReader("pyramids.csv"));
+    String line = br.readLine();
+    if (line != null) {
+        System.out.println(line);            
+    }
+    do{
+        line = br.readLine();
+        if (line != null ) {
+            String[] attributes = line.split(",");
+            allData[counter] = attributes;
+            counter ++;
+            for(String part : attributes){
+                System.out.println(part+" ");
+            }
+            System.out.println("**************************************");
+        }
+    }
+    while(line != null);
+
+   for(int i = 0 ; i<counter;i++){
+        for (int j = 0; j < allData[i].length; j++) {
+            System.out.print(allData[i][j] + " ");
+        }
+        System.out.println("");
+   }
+}
